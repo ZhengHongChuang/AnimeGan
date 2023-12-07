@@ -20,9 +20,9 @@ def get_model(model_weight, device):
 
     
 if __name__ == '__main__':
-    image_dir = str(Path(__file__).parent / "out/source/")
-    output_dir = str(Path(__file__).parent / "out/dstn/")
-    model_weight = Path(__file__).parent / "out/model_record/500.pth"
+    image_dir = "输入路径"
+    output_dir = "输出路径"
+    model_weight = "模型权重路径"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = get_model(model_weight, device)
     model.eval()
