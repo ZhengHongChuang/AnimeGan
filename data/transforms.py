@@ -9,14 +9,12 @@ class Compose():
     def __call__(self, images):
         outputs = []
         if self.is_train:
-            # real
-            self.PIXEL_MEAN = [-4.4661, -8.6698, 13.1360]
+            self.PIXEL_MEAN = [-4.3014, -3.273, 7.2875]
             grayAndNormlize_real = GrayAndNormlize(mean=self.PIXEL_MEAN)
 
             randomCrop_style = RandomCrop(256,256)
             crop_images = randomCrop_style(images[0])
             outputs += grayAndNormlize_real(crop_images, use_norm=False)
-            # style and smooth
             randomCrop_style = RandomCrop(256,256)
             grayAndNormlize_style = GrayAndNormlize(mean=self.PIXEL_MEAN)
             crop_images = randomCrop_style(images[1:])

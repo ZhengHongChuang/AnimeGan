@@ -20,16 +20,6 @@ class ModelCheckpointer():
         if not self.save_dir:
             return
         os.makedirs(self.save_dir, exist_ok=True)
-        # data = {"models": {}, "optimizers": {}, "schedulers": {}}
-        # data["models"]["generator"] = self.models['generator'].state_dict()
-        # data["models"]["discriminator"] = self.models['discriminator'].state_dict()
-        # if self.optimizers is not None:
-        #     data["optimizers"]["generator"] = self.optimizers['generator'].state_dict()
-        #     data["optimizers"]["discriminator"] = self.optimizers['discriminator'].state_dict()
-        # if self.schedulers is not None:
-        #     data["schedulers"]["generator"] = self.schedulers['generator'].state_dict()
-        #     data["schedulers"]["discriminator"] = self.schedulers['discriminator'].state_dict()
-        
         data = {"models": {}, "optimizers": {}, "schedulers": {}}
         data["models"] = self.models.state_dict()
         if self.optimizers is not None:
@@ -95,5 +85,5 @@ class ModelCheckpointer():
 
     def _load_model(self, checkpoint):
         checkpoint_models = checkpoint.pop("models")
-        self.models['generator'].load_state_dict(checkpoint_models.pop("generator"))
-        self.models['discriminator'].load_state_dict(checkpoint_models.pop("discriminator"))
+        self.models['generator'].load_state_dict(checkpoint_models)
+        self.models['discriminator'].load_state_dict(checkpoint_models)
