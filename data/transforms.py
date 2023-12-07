@@ -20,6 +20,7 @@ class Compose():
             crop_images = randomCrop_style(images[1:])
             outputs += grayAndNormlize_style(crop_images)
         else:
+            self.PIXEL_MEAN = [-4.3014, -3.273, 7.2875]
             resize_test = Resize((256,256))
             grayAndNormlize_test = GrayAndNormlize(mean=self.PIXEL_MEAN)
             resize_images = resize_test(images)
