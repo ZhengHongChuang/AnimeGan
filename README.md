@@ -20,11 +20,11 @@ python test2(指定路径)
  
 
 ## 效果
-![avatar][img0_base64]
-![avatar][img1_base64]
-![avatar][img2_base64]
-![avatar][img3_base64]
-![avatar][img4_base64]
+![avatar](./images/1.jpg)
+![avatar](./images/2.jpg)
+![avatar](./images/3.jpg)
+![avatar](./images/4.jpg)
+![avatar](./images/5.jpg)
 
 
 
