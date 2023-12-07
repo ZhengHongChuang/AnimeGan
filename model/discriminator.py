@@ -2,7 +2,6 @@ import torch
 from torch import nn as nn
 from torch.nn.utils import spectral_norm
 from .norm import Norm
-
 def conv_sn(in_channels, out_channels, kernel_size, stride=1, padding=0, bias=True):
     return spectral_norm(
         nn.Conv2d(

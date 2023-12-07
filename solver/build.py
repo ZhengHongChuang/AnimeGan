@@ -1,8 +1,4 @@
-
-
 from .lr_scheduler import WarmupMultiStepLR
-
-
 def lr_scheduler_generator(optimizer, epoch_size):
     return WarmupMultiStepLR(
         optimizer,
